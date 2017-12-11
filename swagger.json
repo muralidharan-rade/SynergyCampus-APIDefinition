@@ -1,0 +1,89 @@
+{
+   "swagger":"2.0",
+   "paths":{
+      "/helpdesk/getModules":{
+         "get":{
+            "responses":{
+               "200":{
+                  "description":""
+               }
+            },
+            "x-auth-type":"Application & Application User",
+            "x-throttling-tier":"Unlimited",
+            "summary":"get the ticket modules"
+         }
+      },
+      "/helpdesk/getTopic":{
+         "get":{
+            "responses":{
+               "200":{
+                  "description":""
+               }
+            },
+            "x-auth-type":"Application & Application User",
+            "x-throttling-tier":"Unlimited",
+            "summary":"Ticket Topics"
+         }
+      },
+      "/helpdesk/{userid}/history":{
+         "get":{
+            "responses":{
+               "200":{
+                  "description":""
+               }
+            },
+            "parameters":[
+               {
+                  "name":"userid",
+                  "in":"path",
+                  "allowMultiple":false,
+                  "required":true,
+                  "type":"string"
+               }
+            ],
+            "x-auth-type":"Application & Application User",
+            "x-throttling-tier":"Unlimited",
+            "summary":"Ticket history of the user"
+         }
+      },
+      "/helpdesk/complaints":{
+         "post":{
+            "responses":{
+               "200":{
+                  "description":""
+               }
+            },
+            "parameters":[
+               {
+                  "name":"Payload",
+                  "description":"Request Body",
+                  "required":true,
+                  "in":"body",
+                  "schema":{
+                     "type":"object",
+                     "properties":{
+                        "payload":{
+                           "type":"string"
+                        }
+                     }
+                  }
+               }
+            ],
+            "summary":"Create a new ticket",
+            "description":"Service to create a new synergy help desk ticket",
+            "produces":[
+               "application/json"
+            ],
+            "consumes":[
+               "application/json"
+            ],
+            "x-auth-type":"Application & Application User",
+            "x-throttling-tier":"Unlimited"
+         }
+      }
+   },
+   "info":{
+      "title":"SynergyCampusModules",
+      "version":"1.0"
+   }
+}
